@@ -1,4 +1,5 @@
-import { cube } from './components/input';
+import { cube } from '../components/input';
+import { random } from 'lodash-es';
 
 function component() {
   var element = document.createElement('pre');
@@ -6,4 +7,10 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component);
+document.body.appendChild(component());
+var tips = document.createElement('pre');
+tips.innerHTML = ['random number', 'is ' + random(0,9)].join('\n\n');
+
+document.body.appendChild(tips);
+
+// console.log('hello world2');

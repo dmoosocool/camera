@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --config build/webpack.prd.config.js",
+    "analyz": "cross-env NODE_ENV=production npm_config_report=true webpack --config build/webpack.analysis.config.js",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server",
+    "start:dev": "webpack-dev-server --hot --inline --color --config build/webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -32,8 +36,18 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "antd-mobile": "^2.2.6",
+    "cross-env": "^5.2.0",
+    "lodash-es": "^4.17.11",
+    "vant": "^1.4.3",
+    "vue": "^2.5.17"
+  }
 }
